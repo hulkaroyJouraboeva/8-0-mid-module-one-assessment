@@ -1,9 +1,13 @@
 /*
-  You may use the following animals array to test your functions inside of this file. This is the same array of animals that is used in the tests.
+  You may use the following animals array to test your functions inside of
+  this file. This is the same array of animals that is used in the tests.
   
-  To run this file, remember that you can run `node index.js` from the command line. You will need to be in the directory where the `index.js` file is kept for the above command to work.
+  To run this file, remember that you can run `node index.js` from the 
+  command line. You will need to be in the directory where the `index.js`
+  file is kept for the above command to work.
 
-  Finally, remember that in order for you to see output on the command line, you must log something out.
+  Finally, remember that in order for you to see output 
+  on the command line, you must log something out.
 */
 const animals = [
   { kind: "Pig", count: 5 },
@@ -14,11 +18,26 @@ const animals = [
   { kind: "Cat", count: 2 },
 ];
 
+    // 0. GUARD CLAUSE 
+    // 
+
+    // 1. INITIAL/DEFAULT VALUE
+    // 
+
+    // 2. DEFINE LOOP
+    // 
+
+        // 3. ACCUMULATE!
+        //
+
+    // RETURN modified inital value
+
 /**
  * FUNCTION DESCRIPTION
  * ------------------
  * Adds up the `count` key of each animal in the array and returns a total.
- * @param {Object[]} animals - An array of animal objects. See above for the shape of the object.
+ * @param {Object[]} animals - An array of animal objects. 
+ * See above for the shape of the object.
  * @returns {number} The total of all animal counts.
  *
  * EXAMPLE
@@ -26,7 +45,28 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+    // 0. GUARD CLAUSE 
+    // IF array is empty
+    if (animals.length === 0) {
+      // return 0
+      return 0;
+    }
+
+    // 1. INITIAL/DEFAULT VALUE
+    // default value, TOTAL is a NUMBER
+    let total = 0;
+
+    // 2. DEFINE LOOP
+    // FOR OF loop to iterate through each ANIMAL{} in ANIMALS[]
+    for (const eachAnimal of animals) {
+      // 3. ACCUMULATE!
+      // TOTAL is re-assigned accumulation of eachAnimal count
+      total += eachAnimal.count
+    }
+    // RETURN modified inital value
+    return total;
+}
 
 /**
  * FUNCTION DESCRIPTION
