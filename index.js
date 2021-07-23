@@ -80,7 +80,38 @@ function getTotalCount(animals) {
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+    // 0. GUARD CLAUSE 
+    // IF input array is empty
+    if (animals.length === 0) {
+      // return an empty array
+      return [];
+    }
+
+    // 1. INITIAL/DEFAULT VALUE
+    // initial value is an array of KINDs as a string
+    let kindsArr = [];
+
+    // 2. DEFINE LOOP
+    // FOR OF loop to iterate through each ANIMAL{} in ANIMALS[]
+    for (const eachAnimal of animals) {
+      // 3. ACCUMULATE!
+      // initial value is re-assigned 
+      // by eachAnimal KIND being PUSHed into it
+      kindsArr.push(eachAnimal.kind);
+    }
+    // RETURN modified inital value
+    return kindsArr;
+}
+
+console.log(getAllKinds([
+  { kind: "Pig", count: 5 },
+  { kind: "Cow", count: 7 },
+  { kind: "Chicken", count: 11 },
+  { kind: "Horse", count: 1 },
+  { kind: "Dog", count: 2 },
+  { kind: "Cat", count: 2 },
+]));
 
 /**
  * FUNCTION DESCRIPTION
