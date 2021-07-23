@@ -9,6 +9,7 @@
   Finally, remember that in order for you to see output 
   on the command line, you must log something out.
 */
+
 const animals = [
   { kind: "Pig", count: 5 },
   { kind: "Cow", count: 7 },
@@ -45,6 +46,7 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
+
 function getTotalCount(animals) {
     // 0. GUARD CLAUSE 
     // IF array is empty
@@ -80,6 +82,7 @@ function getTotalCount(animals) {
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
+
 function getAllKinds(animals) {
     // 0. GUARD CLAUSE 
     // IF input array is empty
@@ -104,22 +107,16 @@ function getAllKinds(animals) {
     return kindsArr;
 }
 
-console.log(getAllKinds([
-  { kind: "Pig", count: 5 },
-  { kind: "Cow", count: 7 },
-  { kind: "Chicken", count: 11 },
-  { kind: "Horse", count: 1 },
-  { kind: "Dog", count: 2 },
-  { kind: "Cat", count: 2 },
-]));
-
 /**
  * FUNCTION DESCRIPTION
  * ------------------
- * Returns all objects inside the given array where the `count` of an animal is equal to or greater than the `minimum` amount.
- * @param {Object[]} animals - An array of animal objects. See above for the shape of the object.
+ * Returns all objects inside the given array where the `count` of an 
+ * animal is equal to or greater than the `minimum` amount.
+ * @param {Object[]} animals - An array of animal objects. 
+ * See above for the shape of the object.
  * @param {number} minimum - The lowest count of animals to include.
- * @returns {Object[]} An array of objects, which represents all animals that have a count equal to or greater than the minimum.
+ * @returns {Object[]} An array of objects, which represents all animals 
+ * that have a count equal to or greater than the minimum.
  *
  * EXAMPLE
  * ------------------
@@ -130,7 +127,34 @@ console.log(getAllKinds([
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+
+function filterByCountMinimum(animals, minimum) {
+    // 0. GUARD CLAUSE 
+    // IF ANIMALS [] is empty 
+    if (animals.length === 0) {
+      // return an empty array
+      return [];
+    }
+
+    // 1. INITIAL/DEFAULT VALUE
+    // initial value is an array[] of specific ANIMAL objects{}
+    let theAnimalsArr = [];
+
+    // 2. DEFINE LOOP
+    // FOR OF to iterate each ANIMAL{} in ANIMALS[]
+    for (const eachAnimal of animals) {
+      // 3. ACCUMULATE!
+      // IF eachAnimal count is >= MINIMUM
+      if (eachAnimal.count >= minimum) {
+        // re-assign inital value by PUSHing eachAnimal into inital value []
+        theAnimalsArr.push(eachAnimal)
+      }
+    }
+    // RETURN modified inital value
+    return theAnimalsArr;
+}
+
+
 
 /**
  * FUNCTION DESCRIPTION
@@ -144,7 +168,25 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+
+function getMostCommonAnimal(animals) {
+    // 0. GUARD CLAUSE 
+    // 
+
+    // 1. INITIAL/DEFAULT VALUE
+    // 
+
+    // 2. DEFINE LOOP
+    // 
+
+        // 3. ACCUMULATE!
+        //
+
+    // RETURN modified inital value
+}
+
+
+
 
 // Do not change anything below this line.
 module.exports = {
