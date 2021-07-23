@@ -154,12 +154,11 @@ function filterByCountMinimum(animals, minimum) {
     return theAnimalsArr;
 }
 
-
-
 /**
  * FUNCTION DESCRIPTION
  * ------------------
- * Returns the object with the highest `count`. If more than one object shares the same highest `count`, return the first one.
+ * Returns the object with the highest `count`. 
+ * If more than one object shares the same highest `count`, return the first one.
  * @param {Object[]} animals - An array of animal objects. See above for the shape of the object.
  * @returns {Object} The object which represents the animal with the highest count.
  *
@@ -171,22 +170,31 @@ function filterByCountMinimum(animals, minimum) {
 
 function getMostCommonAnimal(animals) {
     // 0. GUARD CLAUSE 
-    // 
+    // IF animals[] is empty
+    if (animals.length === 0) {
+      // return null
+      return null;
+    }
 
-    // 1. INITIAL/DEFAULT VALUE
-    // 
+      // 1. INITIAL/DEFAULT VALUE
+      // inital value, start @ animals[0]
+      let highestCount = animals[0];
 
-    // 2. DEFINE LOOP
-    // 
-
+      // 2. DEFINE LOOP
+      // FOR I loop to iterate each ANIMAL{}
+      for (let i = 0; i < animals.length; i++) {
+        // eachAnimal is the varying animals[i]
+        const eachAnimal = animals[i];
         // 3. ACCUMULATE!
-        //
-
+        // IF eachAnimal COUNT is > than the highestCount COUNT
+        if (eachAnimal.count > highestCount.count) {
+          // re-assign inital value to eachAnimal
+          highestCount = eachAnimal;
+        }
+      }
     // RETURN modified inital value
+    return highestCount;
 }
-
-
-
 
 // Do not change anything below this line.
 module.exports = {
